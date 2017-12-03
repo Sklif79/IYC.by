@@ -1,0 +1,108 @@
+/* - - - - - - - - - - - - - - - - Global styles - - - - - - - - - - - - - - - -*/
+html,
+body {
+    min-height: 100vh;
+    font-size: 16px;
+    color: @main-color;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+
+}
+
+.wrapper {
+    flex: 1 1 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1206px;
+    margin: 0 auto;
+}
+
+.clearfix_:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+    text-align: center;
+
+    &:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 35px;
+        background: #EB6835;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+}
+
+h3  {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.slick-arrow {
+    cursor: pointer;
+}
+
+.wave-arrow_white {
+    h2 {
+        color: #fff;
+        padding-left: 56px;
+        padding-right: 52px;
+        display: inline-block;
+        margin-bottom: 41px;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 1px;
+            background: url("../images/wave-white.png");
+            width: 40px;
+            height: 24px;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: -4px;
+            background: url("../images/title-arrow-white.png");
+            width: 35px;
+            height: 35px;
+        }
+    }
+}
+
