@@ -31,6 +31,33 @@ ready(function () {
         });
     })();
 
+    //аккордеон FAQ
+    (function () {
+        var el = document.querySelectorAll('.question__title');
+
+        el.forEach(function (item) {
+
+            item.addEventListener('click', function () {
+
+                var height = this.nextElementSibling.scrollHeight + 'px';
+
+                if (this.parentElement.classList.contains('active')) {
+                    this.nextElementSibling.style.height = '0';
+                    this.parentElement.classList.remove('active');
+                    return;
+                }
+
+                el.forEach(function (item) {
+                    item.nextElementSibling.style.height = '0';
+                    item.parentElement.classList.remove('active');
+                });
+
+                this.parentElement.classList.toggle('active');
+                this.nextElementSibling.style.height = height;
+            });
+        });
+    })();
+
     cutLengthString('.selling-catalog__title', 70, '...');
     cutLengthString('.events-el__title', 50, '...');
 });

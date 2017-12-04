@@ -1,7 +1,78 @@
-//= templates/head.html
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TITLE</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/desktop.css">
+    <link rel="stylesheet" href="assets/css/tablet.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+
+    <!-- favicon -->
+
+    <!--[if IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
 
 <body>
-//= templates/header.html
+<!-- - - - - - - - - - header - - - - - - - - - -->
+<div class="header">
+    <div class="container header__inner">
+        <div class="header-logo">
+            <img src="assets/images/logo.png" alt="">
+            <div class="logo__info">
+                Международный<br>
+                яхтенный центр<br>
+                в Минске
+            </div>
+        </div>
+
+        <div class="header-nav">
+            <ul>
+                <li class="active">
+                    <a href="#">Услуги</a>
+                    <ul>
+                        <li><a href="#">Обучение яхтингу</a></li>
+                        <li class="active"><a href="#">Регаты</a></li>
+                        <li><a href="#">Регаты</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Аренда яхт</a></li>
+                <li><a href="#">Продажа яхт</a></li>
+                <li><a href="#">Мероприятия</a></li>
+                <li><a href="#">О нас</a>
+                    <ul>
+                        <li><a href="#">Подменю 1</a></li>
+                        <li><a href="#">Подменю 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+
+        <div class="recall">
+            <div class="recall-main-phone">
+                <a href="tel:+375296960203">+375 (29) 696-02-03</a>
+            </div>
+            <div class="recall-phones">
+                <a href="tel:+375296960203" class="recall-phones__phone">+375 (29) 696-02-03</a>
+                <a href="tel:+375296960203" class="recall-phones__phone">+375 (29) 696-02-03</a>
+                <a href="tel:+375296960203" class="recall-phones__phone">+375 (29) 696-02-03</a>
+            </div>
+            <a href="#" class="recall-link">Заказать обратный звонок</a>
+        </div>
+
+    </div>
+</div><!-- /header -->
 
 <div class="wrapper">
 
@@ -87,7 +158,7 @@
 
                 <!---->
                 <div class="our-service-slider__el">
-                    <img src="" alt="" style="width: 630px; height: 340px">
+                    <img src="assets/images/learn-yachting.jpg" title="" alt="">
                     <div class="our-service-slider__el-title">
                         <h3>обучение яхтингу</h3>
                         <a href="#" class="more-btn">
@@ -98,7 +169,7 @@
 
                 <!---->
                 <div class="our-service-slider__el">
-                    <img src="" alt="" style="width: 630px; height: 340px">
+                    <img src="assets/images/rent-yacht.jpg" title="" alt="">
                     <div class="our-service-slider__el-title">
                         <h3> Аренда яхт</h3>
                         <a href="#" class="more-btn">
@@ -109,7 +180,7 @@
 
                 <!---->
                 <div class="our-service-slider__el">
-                    <img src="" alt="" style="width: 630px; height: 340px">
+                    <img src="assets/images/learn-yachting.jpg" title="" alt="">
                     <div class="our-service-slider__el-title">
                         <h3>обучение яхтингу</h3>
                         <a href="#" class="more-btn">
@@ -310,7 +381,191 @@
         </div>
     </div><!-- /test-lessons -->
 
-    //= templates/footer.html
+    <!-- faqs -->
+    <div class="faqs">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+
+            <div class="questions-wrap">
+                <!---->
+                <div class="question">
+                    <div class="question__title">
+                        Нужен ли предварительный опыт для того, чтобы учиться
+                        на капитана яхты? в две строки
+                    </div>
+                    <div class="question__answer">
+                        Предварительный опыт походов на яхте приветствуется, так как
+                        помогает усвоению теории. Получить такой опыт можно, записавшись
+                        в команду одной из яхт, участвующих в наших регатах, или в команду
+                        яхты, на которой организуются походы по известным яхтенным местам.
+                        В результате таких поездок вы сможете познакомиться с организацией
+                        жизни на яхте и работы с парусами, и получить статус опытного члена
+                        команды. Если вы поймете, что это именно то, о чем вы мечтали всю
+                        жизнь, приходите учиться и становитесь полноправным самостоятельным
+                        капитаном. Но если вы решили учиться, начиная с теории, все равно
+                        приходите, так как узнаете много интересного и полезного,
+                        а опыт придет позже.
+                    </div>
+                </div>
+
+                <!---->
+                <div class="question">
+                    <div class="question__title">
+                        В каком возрасте не рано/не поздно учиться?
+                    </div>
+                    <div class="question__answer">
+                        Предварительный опыт походов на яхте приветствуется, так как
+                        помогает усвоению теории. Получить такой опыт можно, записавшись
+                        в команду одной из яхт, участвующих в наших регатах, или в команду
+                        яхты
+                    </div>
+                </div>
+
+                <!---->
+                <div class="question">
+                    <div class="question__title">
+                        Из чего состоит учеба?
+                    </div>
+                    <div class="question__answer">
+                        В результате таких поездок вы сможете познакомиться с организацией
+                        жизни на яхте и работы с парусами, и получить статус опытного члена
+                        команды. Если вы поймете, что это именно то, о чем вы мечтали всю
+                        жизнь, приходите учиться и становитесь полноправным самостоятельным
+                        капитаном. Но если вы решили учиться, начиная с теории, все равно
+                        приходите, так как узнаете много интересного и полезного,
+                        а опыт придет позже.
+                    </div>
+                </div>
+
+                <!---->
+                <div class="question">
+                    <div class="question__title">
+                        Как проходят занятия?
+                    </div>
+                    <div class="question__answer">
+                        Предварительный опыт походов на яхте приветствуется, так как
+                        помогает усвоению теории. Получить такой опыт можно, записавшись
+                        в команду одной из яхт, участвующих в наших регатах, или в команду
+                        яхты, на которой организуются походы по известным яхтенным местам.
+                        В результате таких поездок вы сможете познакомиться с организацией
+                        жизни на яхте и работы с парусами
+                    </div>
+                </div>
+
+                <!---->
+                <div class="question">
+                    <div class="question__title">
+                        Где и как проходит практика?
+                    </div>
+                    <div class="question__answer">
+                        Предварительный опыт походов на яхте приветствуется, так как
+                        помогает усвоению теории. Получить такой опыт можно, записавшись
+                        в команду одной из яхт, участвующих в наших регатах, или в команду
+                        яхты, на которой организуются походы по известным яхтенным местам.
+                        В результате таких поездок вы сможете познакомиться с организацией
+                        жизни на яхте и работы с парусами, и получить статус опытного члена
+                        команды.
+                    </div>
+                </div>
+
+                <!---->
+                <div class="question">
+                    <div class="question__title">
+                        Нужна ли большая физическая сила/здоровье и могут ли заниматься девушки?
+                    </div>
+                    <div class="question__answer">
+                        Предварительный опыт походов на яхте приветствуется, так как
+                        помогает усвоению теории. Получить такой опыт можно, записавшись
+                        в команду одной из яхт, участвующих в наших регатах, или в команду
+                        яхты, на которой организуются походы по известным яхтенным местам.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /faqs -->
+
+    <!-- photo-gallery -->
+    <div class="photo-gallery">
+        <h2>Фотогалерея</h2>
+
+        <div class="photo-gallery-slider">
+
+            <!---->
+            <div class="photo-gallery-slider__el">
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_1.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_2.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+            </div>
+
+            <!---->
+            <div class="photo-gallery-slider__el">
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_3.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_1.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+            </div>
+
+            <!---->
+            <div class="photo-gallery-slider__el">
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_2.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_3.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+            </div>
+
+            <!---->
+            <div class="photo-gallery-slider__el">
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_1.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_2.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+            </div>
+
+            <!---->
+            <div class="photo-gallery-slider__el">
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_3.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+                <div class="photo-gallery-slider__el-half">
+                    <a href="assets/images/remove/photo-gallery_1.jpg" rel="photo-gallery" class="fancybox">
+                        <img src="assets/images/remove/photo-gallery_1.jpg" alt="" title="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- - - - - - - - - - footer - - - - - - - - - -->
+    <div class="footer">
+
+    </div><!-- /footer -->
 
     <script src="assets/js/libs.js"></script>
     <script src="assets/js/jquery-scripts.js"></script>

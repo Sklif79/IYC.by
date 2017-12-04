@@ -29,7 +29,7 @@ var path = {
         js: 'src/assets/js/main.js',
         jQuery: 'src/assets/js/jquery-scripts.js',
         jsLibs: 'src/assets/js/libs.js',
-        style: 'src/assets/css/**/*.css',
+        style: 'src/assets/css/**/*.*',
         styleLess: ['src/assets/less/desktop.less',
             'src/assets/less/tablet.less',
             'src/assets/less/mobile.less'],

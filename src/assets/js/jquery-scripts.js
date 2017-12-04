@@ -17,5 +17,13 @@ $(document).ready(function () {
         arrows: true
     });
 
+    $('.photo-gallery-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        nextArrow: '<div class="our-service-slider__next"></div>',
+        prevArrow: '<div class="our-service-slider__prev"></div>',
+        arrows: true
+    });
+
 
 });
