@@ -42,6 +42,10 @@
   font-size: 12px;
 }
 
+.recall {
+  margin-top: -4px;
+}
+
 .recall-main-phone {
   font-weight: bold;
   letter-spacing: 0.04em;
@@ -73,8 +77,8 @@
 
 .header-nav {
   flex: 1 1 auto;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 89px;
+  margin-right: 79px;
 
   li {
     list-style: none;
@@ -135,8 +139,8 @@
     }
 
     li, a {
-      height: 28px;
-      line-height: 28px;
+      height: 37px;
+      line-height: 36px;
       display: block;
       border-bottom: 1px solid #EFF1F2;
 
@@ -269,12 +273,13 @@
 }
 
 .main-slider__el-title {
-  margin-top: 184px;
+  margin-top: 185px;
   text-align: center;
   font-weight: bold;
   font-size: 2.8125rem;
   text-transform: uppercase;
   position: relative;
+  line-height: normal;
 
   &:after {
     position: absolute;
@@ -289,7 +294,7 @@
 }
 
 .main-slider__el-description {
-  margin-top: 77px;
+  margin-top: 73px;
   font-size: 1.75rem;
   text-align: center;
 }
@@ -318,26 +323,26 @@
 }
 
 .main-sider__btn {
-  margin: 70px auto 0;
+  margin: 76px auto 0;
   width: 120px;
   display: block;
 }
 
 /* - - - - - - - - - - - - - - - - about-info - - - - - - - - - - - - - - - - */
 .about-info {
-  padding: 60px 0 54px;
+  padding: 64px 0 54px;
   text-align: center;
 
   h2 {
-    padding-left: 35px;
+    padding-left: 32px;
     display: inline-block;
-    margin-bottom: 26px;
+    margin-bottom: 29px;
 
     &:before {
       position: absolute;
       content: "";
-      left: 0;
-      top: 1px;
+      left: -3px;
+      top: -1px;
       background: url("../images/anchor.png");
       width: 22px;
       height: 23px;
@@ -355,7 +360,7 @@
 .our-service {
   background: linear-gradient(#F1F1F1 180px, #FFF 180px);
   text-align: center;
-  padding-top: 52px;
+  padding-top: 57px;
   padding-bottom: 44px;
 
   .slick-current .our-service-slider__el-title {
@@ -364,13 +369,13 @@
 
   h2 {
     display: inline-block;
-    padding-left: 46px;
-    margin-bottom: 34px;
+    padding-left: 25px;
+    margin-bottom: 37px;
 
     &:after {
       position: absolute;
       content: "";
-      left: 0;
+      left: -21px;
       top: 1px;
       background: url("../images/wave-orange.png");
       width: 33px;
@@ -447,7 +452,7 @@
   &:after {
     position: absolute;
     content: "";
-    right: 25px;
+    right: 22px;
     top: 6px;
     width: 23px;
     height: 24px;
@@ -459,7 +464,7 @@
 .hot-offers {
   background: linear-gradient(#48B3E9 178px, #FFF 178px);
   text-align: center;
-  padding-top: 38px;
+  padding-top: 47px;
   padding-bottom: 44px;
 }
 
@@ -475,8 +480,8 @@
 .selling {
   background: linear-gradient(#734FA0 178px, #FFF 178px);
   text-align: center;
-  padding-top: 38px;
-  padding-bottom: 44px;
+  padding-top: 46px;
+  padding-bottom: 39px;
 }
 
 .selling-catalog {
@@ -570,7 +575,7 @@
 .events-el__info {
   border: 1px solid #DEDEDE;
   border-top: none;
-  padding: 8px 21px 13px;
+  padding: 14px 21px 15px;
 }
 
 .events-el__title {
@@ -581,7 +586,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   font-size: 1rem;
 }
 
@@ -598,6 +603,7 @@
     height: 16px;
     background: url("../images/small-calendar.png");
     left: 0;
+    top: -2px;
   }
 }
 
@@ -610,6 +616,8 @@
     display: flex;
     height: 178px;
     justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 39px;
 
     > * {
       align-self: center;
@@ -637,16 +645,17 @@
     position: absolute;
     background: url("../images/test-lessons-arrow.png") center no-repeat;
     width: 34px;
-    height: 100%;
-    top: 0;
+    height: 77px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &:before {
-    left: -94px;
+    left: -89px;
   }
 
   &:after {
-    right: -82px;
+    right: -85px;
   }
 
 
@@ -660,18 +669,20 @@
   line-height: 43px;
   border: 2px solid @orange;
   display: inline-block;
-  padding: 0 52px;
+  padding: 0 54px;
   color: #fff;
   text-transform: uppercase;
   border-radius: 40px;
+  font-weight: bold;
+  font-size: 0.875rem;
 }
 
 /* - - - - - - - - - - - - - - - - faqs - - - - - - - - - - - - - - - - */
 .faqs {
-  padding: 54px 0 70px;
+  padding: 58px 0 70px;
 
   h2 {
-    margin-bottom: 33px;
+    margin-bottom: 37px;
   }
 }
 
@@ -686,6 +697,7 @@
   
   &.active {
     background-color: rgba(248, 248, 248, 0.8);
+    padding-bottom: 25px;
 
     .question__title:after {
       transform: rotate(-179deg);
@@ -698,10 +710,14 @@
   }
 }
 
+.active .question__title {
+  padding-bottom: 16px;
+}
+
 .question__title {
   font-weight: 600;
   line-height: normal;
-  padding: 23px 120px 26px 20px;
+  padding: 23px 120px 25px 20px;
   position: relative;
   cursor: pointer;
 
@@ -709,8 +725,8 @@
     position: absolute;
     content: "";
     background: url("../images/faq-arrow-black.png") center no-repeat;
-    top: 5px;
-    right: 19px;
+    top: 24px;
+    right: 18px;
     width: 15px;
     height: 20px;
     transition: 0.3s;
@@ -731,22 +747,23 @@
 .photo-gallery {
   text-align: center;
   background: url("../images/photo-gallery.jpg") center no-repeat;
-  padding-top: 44px;
+  padding-top: 48px;
   padding-bottom: 92px;
 
   h2 {
     display: inline-block;
     padding-left: 56px;
     color: #fff;
+    margin-bottom: 42px;
 
     &:after {
       position: absolute;
       content: "";
-      left: 0;
-      top: 1px;
-      background: url("../images/wave-orange.png");
-      width: 33px;
-      height: 20px;
+      left: -3px;
+      top: -2px;
+      background: url("../images/wave-orange-big.png");
+      width: 42px;
+      height: 25px;
     }
   }
 }
