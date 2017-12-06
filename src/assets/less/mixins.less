@@ -6,3 +6,13 @@
   height: 100%;
 }
 
+.slider-arrows(@width) {
+  position: absolute;
+  content: "";
+  z-index: 10;
+  width: @width;
+  top: 0;
+  bottom: 0;
+  transition: @transition;
+}
+

@@ -1,6 +1,7 @@
 @import "reset.css";
 @import "plugins/slick/slick.css";
 @import "plugins/slick/slick-theme.css";
+@import "plugins/fancybox/jquery.fancybox.css";
 @import "fonts.less";
 @import "variables.less";
 @import "mixins.less";
@@ -245,13 +246,7 @@
 }
 
 .main-slider__next, .main-slider__prev {
-  position: absolute;
-  content: "";
-  z-index: 10;
-  width: 130px;
-  top: 0;
-  bottom: 0;
-  transition: @transition;
+  .slider-arrows(130px);
 }
 
 .main-slider__next {
@@ -680,6 +675,7 @@
 /* - - - - - - - - - - - - - - - - faqs - - - - - - - - - - - - - - - - */
 .faqs {
   padding: 58px 0 70px;
+  background: url("../images/faq-horse.png") center no-repeat;
 
   h2 {
     margin-bottom: 37px;
@@ -696,7 +692,7 @@
   border-bottom: 1px solid #E3E3E3;
   
   &.active {
-    background-color: rgba(248, 248, 248, 0.8);
+    background-color: rgba(0, 0, 0, 0.02);
     padding-bottom: 25px;
 
     .question__title:after {
@@ -768,3 +764,220 @@
   }
 }
 
+.photo-gallery-slider {
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+
+  .slick-list {
+    margin-left: -1px;
+    margin-right: -1px;
+    border-bottom: 1px solid #fff;
+  }
+
+  .slick-slide {
+    margin-right: -1px;
+  }
+}
+
+.photo-gallery-slider__el {
+  padding: 1px;
+  background-color: #fff;
+  margin-bottom: -1px;
+  position: relative;
+
+  &:hover .photo-gallery-slider__el-overlay{
+    opacity: 1;
+  }
+}
+
+.photo-gallery-slider__next, .photo-gallery-slider__prev {
+  .slider-arrows(130px);
+}
+
+.photo-gallery-slider__el-overlay {
+  .position-absolute-stretch();
+  opacity: 0;
+  background: url("../images/fancybox-magnifier.png") center rgba(28,44,55,.3) no-repeat;
+  transition: @transition;
+}
+
+/* - - - - - - - - - - - - - - - - faqs - - - - - - - - - - - - - - - - */
+.seo-text {
+  text-align: center;
+  padding-top: 54px;
+  padding-bottom: 62px;
+
+  h2 {
+    display: inline-block;
+    padding-left: 25px;
+    margin-bottom: 37px;
+
+    &:after {
+      position: absolute;
+      content: "";
+      left: -21px;
+      top: 1px;
+      background: url("../images/wave-orange.png");
+      width: 33px;
+      height: 20px;
+    }
+  }
+  
+  p {
+    text-align: left;
+  }
+}
+
+/* - - - - - - - - - - - - - - - - map - - - - - - - - - - - - - - - - */
+.map-wrap {
+  height: 486px;
+  overflow: hidden;
+  position: relative;
+}
+
+.map {
+  height: 526px;
+}
+
+.map-info-wrap {
+  position: absolute;
+  width: 433px;
+  height: 207px;
+  top: 50%;
+  transform: translateY(-49.8%);
+  left: 117px;
+  background: url("../images/map-info.png");
+  padding: 10px;
+
+
+  &:after {
+    background: url("../images/map-info-corner.png");
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.map-info {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  height: 100%;
+  padding: 15px 18px 15px 114px;
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.map-info__adress, .map-info__contacts {
+  padding-left: 23px;
+  font-weight: 600;
+}
+
+.map-info__adress {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  padding-bottom: 15px;
+
+  &:after {
+    position: absolute;
+    content: "";
+    background: url("../images/map-location.png");
+    width: 13px;
+    height: 13px;
+    top: 2px;
+    left: 0;
+  }
+}
+
+.map-info__contacts {
+  padding-top: 15px;
+}
+
+.map-info__contacts-phone {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    background: url("../images/map-call.png") center no-repeat;
+    width: 13px;
+    height: 13px;
+    top: 4px;
+    left: -23px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.map-info__contacts-mail {
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255, .3);
+
+  &:before {
+    position: absolute;
+    content: "";
+    background: url("../images/map-mail.png") center no-repeat;
+    width: 13px;
+    height: 13px;
+    top: 4px;
+    left: -23px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.map-info__contacts-skype {
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255, .3);
+
+  &:before {
+    position: absolute;
+    content: "";
+    background: url("../images/map-skype.png") center no-repeat;
+    width: 13px;
+    height: 13px;
+    top: 4px;
+    left: -23px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+/* - - - - - - - - - - - - - - - - footer - - - - - - - - - - - - - - - - */
+.footer {
+  padding-top: 45px;
+  background: #24272A;
+}
+
+.footer-top {
+  display: flex;
+}
+
+.footer-columns-wrap {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.footer-top-aside {
+  flex: 0 0 234px;
+  font-size: 0;
+}
+
+.footer-title {
+  font-size: 1rem;
+  color: #BDC2C5;
+  margin-bottom: 20px;
+}

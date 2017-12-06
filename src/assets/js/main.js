@@ -58,6 +58,8 @@ ready(function () {
     })();
 
 
+
+
     cutLengthString('.selling-catalog__title', 70, '...');
     cutLengthString('.events-el__title', 50, '...');
 });
