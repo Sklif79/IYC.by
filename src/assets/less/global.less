@@ -4,6 +4,7 @@ body {
     min-height: 100vh;
     font-size: 16px;
     color: @main-color;
+    line-height: 24px;
 }
 
 body {
@@ -11,7 +12,6 @@ body {
     flex-direction: column;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
-
 }
 
 .wrapper {
@@ -25,9 +25,14 @@ img {
 .container {
     max-width: 1206px;
     margin: 0 auto;
+    text-align: center;
+    
+    > * {
+        text-align: left;
+    }
 }
 
-.clearfix_:after {
+.clearfix:after {
     content: "";
     display: block;
     height: 0;
@@ -42,6 +47,7 @@ h1 {
     position: relative;
     color: #fff;
     text-align: center;
+    display: inline-block;
 
     &:after {
         content: "";
@@ -61,11 +67,61 @@ h2 {
     text-transform: uppercase;
     text-align: center;
     position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 h3  {
     font-size: 1.125rem;
     font-weight: bold;
+}
+
+p {
+    margin-bottom: 0.625rem;
+}
+
+ol {
+    padding-left: 18px;
+    margin-bottom: 0.625rem;
+}
+
+ul {
+    margin-bottom: 0.625rem;
+}
+
+.table-wrap {
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    border-bottom: 1px solid #EAEAEA;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+}
+
+th {
+    padding: 17px 25px;
+    font-weight: bold;
+    background: #434C52;
+    text-align: center;
+    color: #fff;
+}
+
+td {
+    padding: 14px 25px 15px;
+}
+
+blockquote {
+    font-style: italic;
 }
 
 .slick-dotted.slick-slider {

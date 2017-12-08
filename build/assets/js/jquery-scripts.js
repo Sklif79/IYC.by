@@ -26,6 +26,27 @@ $(document).ready(function () {
         arrows: true
     });
 
+    $('.cost-learning-slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        arrows: false
+    });
+
+    //кастомное управление для cost-learning-slider
+    $('.cost-learning-slider-wrap .slider-next').on('click', function() {
+        $('.cost-learning-slider').slick('slickNext');
+    });
+    $('.cost-learning-slider-wrap .slider-prev').on('click', function() {
+        $('.cost-learning-slider').slick('slickPrev');
+    });
+
+    $('.other-services-slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        nextArrow: '<div class="our-service-slider__next"></div>',
+        prevArrow: '<div class="our-service-slider__prev"></div>',
+        arrows: true
+    });
 
     //fancybox
     $('a.fancybox').fancybox({
