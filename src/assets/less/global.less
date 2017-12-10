@@ -16,6 +16,8 @@ body {
 
 .wrapper {
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 img {
@@ -48,6 +50,7 @@ h1 {
     color: #fff;
     text-align: center;
     display: inline-block;
+    max-width: 510px;
 
     &:after {
         content: "";
@@ -59,6 +62,10 @@ h1 {
         left: 50%;
         transform: translateX(-50%);
     }
+}
+
+.container h1 {
+    text-align: center;
 }
 
 h2 {
@@ -124,6 +131,12 @@ blockquote {
     font-style: italic;
 }
 
+label {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+}
+
 .slick-dotted.slick-slider {
     margin-bottom: 0;
 }
@@ -132,35 +145,7 @@ blockquote {
     cursor: pointer;
 }
 
-.wave-arrow_white {
-    h2 {
-        color: #fff;
-        padding-left: 56px;
-        padding-right: 52px;
-        display: inline-block;
-        margin-bottom: 48px;
 
-        &:before {
-            position: absolute;
-            content: "";
-            left: 0;
-            top: -2px;
-            background: url("../images/wave-white.png");
-            width: 40px;
-            height: 24px;
-        }
-
-        &:after {
-            position: absolute;
-            content: "";
-            right: 0;
-            top: -7px;
-            background: url("../images/title-arrow-white.png");
-            width: 35px;
-            height: 35px;
-        }
-    }
-}
 
 .fancybox-close {
     background: url("plugins/fancybox/fancybox-close.png") center no-repeat;

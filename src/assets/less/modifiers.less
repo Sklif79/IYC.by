@@ -5,3 +5,51 @@
 .page-theme_gray {
   background: #E5E5E5;
 }
+
+.title_simple {
+  h2 {
+    text-align: left;
+    padding-left: 0;
+    display: block;
+    margin-bottom: 15px;
+
+    &:before, &:after {
+      display: none;
+    }
+  }
+}
+
+.wave-arrow_white {
+  h2 {
+    color: #fff;
+    padding-left: 56px;
+    padding-right: 52px;
+    display: inline-block;
+    margin-bottom: 48px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: -2px;
+      background: url("../images/wave-white.png");
+      width: 40px;
+      height: 24px;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      right: 0;
+      left: auto;
+      top: -7px;
+      background: url("../images/title-arrow-white.png");
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+.question_background {
+  background: url("../images/faq-horse.png") center no-repeat;
+}
