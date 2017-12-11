@@ -135,7 +135,7 @@ gulp.task('browserSync', function () {
         server: {
             baseDir: "./build"
         },
-        // index: 'index-page.html',
+        index: 'index-page.html',
         // index: 'services.html',
         // index: 'learn.html',
         // index: 'rent.html',
@@ -151,7 +151,7 @@ gulp.task('browserSync', function () {
         // index: 'guide.html',
         // index: 'contacts.html',
         // index: 'sitemap.html',
-        index: '404.html',
+        // index: '404.html',
 
         port: 8080,
         open: true,
