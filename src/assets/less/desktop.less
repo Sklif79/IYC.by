@@ -1955,6 +1955,12 @@ a.breadcrumbs__link {
 .sale-filter__column {
   float: left;
   margin-right: 60px;
+
+  &.js-calculated {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .sale-filter__title {
@@ -1964,6 +1970,10 @@ a.breadcrumbs__link {
 .sale-filter__wrap {
   font-size: 0;
   line-height: normal;
+
+  &.js-calculated {
+    display: flex;
+  }
 }
 
 .sale-filter__aside {
@@ -1995,7 +2005,7 @@ a.breadcrumbs__link {
   padding-left: 23px;
   position: relative;
   font-size: 0.875rem;
-  display: block;
+  //display: block;
 
   &:before {
     content: "";

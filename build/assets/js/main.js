@@ -58,27 +58,62 @@ ready(function () {
         });
     })();
 
+    /////////////////////////////////////////////////////////////////
     //сортировка input по длине и рассчет колонок
-    // (() => {
-    //     let arrInput = document.querySelectorAll('.sale-filter__el');
-    //
-    //     arrInput.forEach(function (item) {
-    //         console.log(item.offsetWidth);
-    //     });
-    //
-    //     arrInput.sort(function(a, b) {
-    //         return $(a).offsetWidth - $(b).offsetWidth;
-    //     });
-    //
-    //     arrInput.forEach(function (item) {
-    //         console.log(item.offsetWidth);
-    //     });
-    //
-    //
-    //     console.log(arrInput);
-    //
-    // })();
+    var arr = document.querySelectorAll('.sale-filter__el'),
+        arrNew = [],
+        wrap = document.querySelector('.sale-filter__wrap'),
+        maxWidth = wrap.offsetWidth,
+        columns = 0;
 
+    arr.forEach(function (item) {
+        arrNew.push(item);
+    });
+
+    arrNew.sort(function (a, b) {
+        return b.offsetWidth - a.offsetWidth;
+    });
+
+    //проверки
+    function maxColumn() {
+        var width = 0,
+            count = 0;
+        for (var i = 0; i < arrNew.length; i++) {
+            width += arrNew[i].offsetWidth + 60;
+            count++;
+            if (width > maxWidth) {
+                count--;
+                return count;
+            }
+        }
+    }
+
+    var elInColumn = Math.ceil(arrNew.length / maxColumn()),
+        maxCol = maxColumn();
+
+    //колонки
+    for (var i = 0; i < maxCol; i++) {
+        (function () {
+            var div = document.createElement('div');
+            div.classList.add('sale-filter__column');
+
+            //запихиваем элементы в колонку
+            for (var _i = 0; _i < elInColumn; _i++) {
+                if (arrNew.length) {
+                    div.append(arrNew.shift());
+                }
+            }
+
+            wrap.append(div);
+        })();
+    }
+
+    document.querySelectorAll('.sale-filter__column').forEach(function (item) {
+        item.classList.add('js-calculated');
+    });
+
+    document.querySelector('.sale-filter__wrap').classList.add('js-calculated');
+    ///////////////////////////////
     cutLengthString('.selling-catalog__title', 70, '...');
     cutLengthString('.events-el__title', 50, '...');
     cutLengthString('.sale-catalog__title', 70, '...');
