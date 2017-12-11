@@ -58,6 +58,27 @@ ready(function () {
         });
     })();
 
+    //сортировка input по длине и рассчет колонок
+    // (() => {
+    //     let arrInput = document.querySelectorAll('.sale-filter__el');
+    //
+    //     arrInput.forEach(function (item) {
+    //         console.log(item.offsetWidth);
+    //     });
+    //
+    //     arrInput.sort(function(a, b) {
+    //         return $(a).offsetWidth - $(b).offsetWidth;
+    //     });
+    //
+    //     arrInput.forEach(function (item) {
+    //         console.log(item.offsetWidth);
+    //     });
+    //
+    //
+    //     console.log(arrInput);
+    //
+    // })();
+
     cutLengthString('.selling-catalog__title', 70, '...');
     cutLengthString('.events-el__title', 50, '...');
     cutLengthString('.sale-catalog__title', 70, '...');
@@ -65,6 +86,9 @@ ready(function () {
 
     checkedInput();
     resetInput();
+    toUp(600, '.up-btn');
+    classAfterScroll(0, '.header', 'header_dark');
+    dropHover('.recall-main-phone', '.recall-phones');
 });
 
 /**
@@ -139,4 +163,101 @@ function resetInput() {
             });
         });
     });
+}
+
+/**
+ * up button
+ * @param topPosition integer - show button after topPosition scroll
+ * @param btn string - btn class or id
+ */
+function toUp(topPosition, btn) {
+    var goTopBtn = document.querySelector(btn);
+
+    classAfterScroll(topPosition, btn, 'show');
+
+    function backToTop() {
+        if (window.pageYOffset > 0) {
+            window.scrollBy(0, -20);
+            setTimeout(backToTop, 0);
+        }
+    }
+
+    goTopBtn.addEventListener('click', backToTop);
+}
+
+/**
+ *
+ * @param scroll integer, events after scroll (px)
+ * @param target string, target class or id
+ * @param addClassName string
+ */
+function classAfterScroll(scroll, target, addClassName) {
+    var targetClass = document.querySelector(target);
+
+    function scrollWindow() {
+        if (window.pageYOffset > scroll) {
+            targetClass.classList.add(addClassName);
+        } else {
+            targetClass.classList.remove(addClassName);
+        }
+    }
+
+    window.addEventListener('scroll', scrollWindow);
+}
+
+/**
+ * sum all inner heights
+ * @param target string, class or id
+ */
+function sumInnerHeight(target) {
+    var targetEl = document.querySelector(target),
+        elInner = targetEl.children,
+        height = 0;
+
+    [].forEach.call(elInner, function (elem) {
+        height += Math.max(elem.offsetHeight, parseInt(getComputedStyle(elem).lineHeight));
+    });
+
+    return height;
+}
+
+/**
+ * hover and dropdown
+ * @param target string, events after hover on block
+ * @param dropBlock string
+ */
+function dropHover(target, dropBlock) {
+    var phone = document.querySelector(target),
+        drop = document.querySelector(dropBlock),
+        isLeave = false;
+
+    if (drop.children.length) {
+        phone.classList.add('js-drop-arrow');
+    }
+
+    function leaveBlocks() {
+        setTimeout(function () {
+            if (isLeave) {
+                drop.style.height = 0;
+                phone.classList.remove('js-active');
+            }
+        }, 1000);
+    }
+
+    phone.onmouseenter = function () {
+        drop.style.height = sumInnerHeight(dropBlock) + 'px';
+        phone.classList.add('js-active');
+        isLeave = false;
+    };
+    phone.onmouseleave = function () {
+        isLeave = true;
+        leaveBlocks();
+    };
+    drop.onmouseenter = function () {
+        isLeave = false;
+    };
+    drop.onmouseleave = function () {
+        isLeave = true;
+        leaveBlocks();
+    };
 }

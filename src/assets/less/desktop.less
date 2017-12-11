@@ -18,6 +18,11 @@
   display: flex;
   z-index: 1000;
   color: #ffffff;
+  transition: background-color @transition;
+}
+
+.header_dark {
+  background-color: rgba(3, 3, 3, 0.96);
 }
 
 .header__inner {
@@ -43,7 +48,11 @@
 }
 
 .recall {
-  margin-top: 3px;
+  height: 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
 .recall-main-phone {
@@ -53,20 +62,49 @@
   color: #FFFFFF;
   position: relative;
   padding-right: 14px;
+  margin-bottom: 4px;
 }
 
-.recall-main-phone:after {
-  position: absolute;
-  content: "";
-  border-style: solid;
-  border-width: 5px 5px 0 5px;
-  border-color: #ffffff transparent transparent transparent;
-  right: 0;
-  top: 9px;
+.js-drop-arrow {
+
+  &:after {
+    position: absolute;
+    content: "";
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #ffffff transparent transparent transparent;
+    right: 0;
+    top: 9px;
+    transition: @transition;
+  }
+
+  &.js-active {
+    &:after {
+      transform: rotate(179deg);
+    }
+  }
 }
 
 .recall-phones {
-  display: none;
+  position: absolute;
+  text-transform: none;
+  background-color: #fff;
+  font-size: 0.8125rem;
+  color: @main-color;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 0;
+  overflow: hidden;
+  transition: @transition;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-weight: bold;
+  top: 100%;
+
+  a {
+    white-space: nowrap;
+  }
 }
 
 .recall-link {
@@ -78,7 +116,7 @@
   background: linear-gradient(to right, #EB3535 2px, transparent 2px) 0 bottom repeat-x;
   background-size: 4px 1px;
   position: relative;
-  top: -7px;
+  top: -6px;
 }
 
 .header-nav {
@@ -703,7 +741,7 @@
 
 .question {
   border-bottom: 1px solid #E3E3E3;
-  
+
   &.active {
     background-color: rgba(0, 0, 0, 0.02);
     padding-bottom: 25px;
@@ -864,7 +902,7 @@
       .orange-wave;
     }
   }
-  
+
   p {
     text-align: left;
   }
@@ -1358,7 +1396,7 @@ a.breadcrumbs__link {
   padding-bottom: 69px;
   background: url("../images/cost-learning.jpg") center no-repeat;
   background-size: cover;
-  
+
   h2 {
     color: #fff;
     margin-bottom: 4px;
@@ -1534,7 +1572,7 @@ a.breadcrumbs__link {
   font-size: 1.25rem;
   position: relative;
   font-weight: bold;
-  
+
   &:after {
     content: "";
     width: 52px;
@@ -1683,7 +1721,7 @@ a.breadcrumbs__link {
   background-size: cover;
   padding-top: 56px;
   padding-bottom: 71px;
-  
+
   h2 {
     padding-left: 0;
     display: block;
@@ -1911,6 +1949,12 @@ a.breadcrumbs__link {
 .sale-filter__checkboxes{
   padding: 13px 25px 24px;
   line-height: normal;
+  flex-grow: 1;
+}
+
+.sale-filter__column {
+  float: left;
+  margin-right: 60px;
 }
 
 .sale-filter__title {
@@ -1920,8 +1964,6 @@ a.breadcrumbs__link {
 .sale-filter__wrap {
   font-size: 0;
   line-height: normal;
-  column-count: 6;
-  column-gap: 20px;
 }
 
 .sale-filter__aside {
@@ -1953,6 +1995,7 @@ a.breadcrumbs__link {
   padding-left: 23px;
   position: relative;
   font-size: 0.875rem;
+  display: block;
 
   &:before {
     content: "";
@@ -2135,7 +2178,7 @@ a.breadcrumbs__link {
     column-count: 2;
     column-gap: 5px;
     line-height: normal;
-    
+
     b {
       color: @main-color;
     }
@@ -2603,11 +2646,11 @@ a.breadcrumbs__link {
   color: #fff;
   font-weight: 600;
   margin-top: 17px;
-  
+
   a {
     position: relative;
     color: @orange;
-    
+
     &:after {
       position: absolute;
       content: "";
@@ -2620,7 +2663,22 @@ a.breadcrumbs__link {
   }
 }
 
+/* - - - - - - - - - - - - - - - - up-btn - - - - - - - - - - - - - - - - */
+.up-btn {
+  background: url("../images/toUp.png") center no-repeat;
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  bottom: 170px;
+  right: 111px;
+  transition: @transition;
+  cursor: pointer;
+  opacity: 0;
 
+  &.show {
+    opacity: 1;
+  }
+}
 
 
 
