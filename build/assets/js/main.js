@@ -59,60 +59,68 @@ ready(function () {
     })();
 
     /////////////////////////////////////////////////////////////////
-    //сортировка input по длине и рассчет колонок
-    var arr = document.querySelectorAll('.sale-filter__el'),
-        arrNew = [],
-        wrap = document.querySelector('.sale-filter__wrap'),
-        maxWidth = wrap.offsetWidth,
-        columns = 0;
+    function inputFilter() {
+        if (document.querySelectorAll('.sale-filter__wrap').length) {
+            (function () {
 
-    arr.forEach(function (item) {
-        arrNew.push(item);
-    });
+                //проверки
+                var maxColumn = function maxColumn() {
+                    var width = 0,
+                        count = 0;
+                    for (var i = 0; i < arrNew.length; i++) {
+                        width += arrNew[i].offsetWidth + 60;
+                        count++;
+                        if (width > maxWidth) {
+                            count--;
+                            return count;
+                        }
+                    }
+                };
 
-    arrNew.sort(function (a, b) {
-        return b.offsetWidth - a.offsetWidth;
-    });
+                //сортировка input по длине и рассчет колонок
+                var arr = document.querySelectorAll('.sale-filter__el'),
+                    arrNew = [],
+                    wrap = document.querySelector('.sale-filter__wrap'),
+                    maxWidth = wrap.offsetWidth,
+                    columns = 0;
 
-    //проверки
-    function maxColumn() {
-        var width = 0,
-            count = 0;
-        for (var i = 0; i < arrNew.length; i++) {
-            width += arrNew[i].offsetWidth + 60;
-            count++;
-            if (width > maxWidth) {
-                count--;
-                return count;
-            }
+                arr.forEach(function (item) {
+                    arrNew.push(item);
+                });
+
+                arrNew.sort(function (a, b) {
+                    return b.offsetWidth - a.offsetWidth;
+                });
+
+                var elInColumn = Math.ceil(arrNew.length / maxColumn()),
+                    maxCol = maxColumn();
+
+                //колонки
+                for (var i = 0; i < maxCol; i++) {
+                    (function () {
+                        var div = document.createElement('div');
+                        div.classList.add('sale-filter__column');
+
+                        //запихиваем элементы в колонку
+                        for (var _i = 0; _i < elInColumn; _i++) {
+                            if (arrNew.length) {
+                                div.append(arrNew.shift());
+                            }
+                        }
+
+                        wrap.append(div);
+                    })();
+                }
+
+                document.querySelectorAll('.sale-filter__column').forEach(function (item) {
+                    item.classList.add('js-calculated');
+                });
+
+                document.querySelector('.sale-filter__wrap').classList.add('js-calculated');
+            })();
         }
     }
 
-    var elInColumn = Math.ceil(arrNew.length / maxColumn()),
-        maxCol = maxColumn();
-
-    //колонки
-    for (var i = 0; i < maxCol; i++) {
-        (function () {
-            var div = document.createElement('div');
-            div.classList.add('sale-filter__column');
-
-            //запихиваем элементы в колонку
-            for (var _i = 0; _i < elInColumn; _i++) {
-                if (arrNew.length) {
-                    div.append(arrNew.shift());
-                }
-            }
-
-            wrap.append(div);
-        })();
-    }
-
-    document.querySelectorAll('.sale-filter__column').forEach(function (item) {
-        item.classList.add('js-calculated');
-    });
-
-    document.querySelector('.sale-filter__wrap').classList.add('js-calculated');
     ///////////////////////////////
     cutLengthString('.selling-catalog__title', 70, '...');
     cutLengthString('.events-el__title', 50, '...');
@@ -124,6 +132,7 @@ ready(function () {
     toUp(600, '.up-btn');
     classAfterScroll(0, '.header', 'header_dark');
     dropHover('.recall-main-phone', '.recall-phones');
+    inputFilter();
 });
 
 /**
@@ -252,7 +261,7 @@ function sumInnerHeight(target) {
     [].forEach.call(elInner, function (elem) {
         height += Math.max(elem.offsetHeight, parseInt(getComputedStyle(elem).lineHeight));
     });
-
+    console.log(height);
     return height;
 }
 
@@ -274,6 +283,7 @@ function dropHover(target, dropBlock) {
         setTimeout(function () {
             if (isLeave) {
                 drop.style.height = 0;
+                drop.classList.remove('js-active');
                 phone.classList.remove('js-active');
             }
         }, 1000);
@@ -281,6 +291,7 @@ function dropHover(target, dropBlock) {
 
     phone.onmouseenter = function () {
         drop.style.height = sumInnerHeight(dropBlock) + 'px';
+        drop.classList.add('js-active');
         phone.classList.add('js-active');
         isLeave = false;
     };
@@ -296,3 +307,34 @@ function dropHover(target, dropBlock) {
         leaveBlocks();
     };
 }
+
+//цветные изображения при ховере
+function hoverColorImg(target, dataName) {
+    var newSrc = void 0,
+        src = void 0,
+        oldSrc = void 0,
+        thisImg = void 0;
+
+    $(document).on('mouseenter', target, function () {
+        thisImg = $(this).find('img');
+        newSrc = thisImg.attr(dataName);
+        oldSrc = thisImg.attr('src');
+        src = thisImg.attr('src', newSrc);
+    });
+
+    $(document).on('mouseleave', target, function () {
+        thisImg.attr('src', oldSrc);
+    });
+
+    // if ($(window).width() <= 768) {
+    //
+    //     $(target).each(function () {
+    //         thisImg = $(this).find('img');
+    //         newSrc = thisImg.attr(dataName);
+    //         src = thisImg.attr('src', newSrc);
+    //     });
+    //
+    // }
+}
+
+hoverColorImg('.employers__social a', 'data-hover-src');

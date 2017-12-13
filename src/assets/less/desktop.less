@@ -48,7 +48,7 @@
 }
 
 .recall {
-  height: 74px;
+  //height: 74px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,18 +89,41 @@
   position: absolute;
   text-transform: none;
   background-color: #fff;
-  font-size: 0.8125rem;
+  font-weight: 600;
   color: @main-color;
+  line-height: 1.6875rem;
+  padding: 0 22px;
+  letter-spacing: 0.04rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   height: 0;
   overflow: hidden;
   transition: @transition;
-  width: 100%;
-  left: 0;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  font-weight: bold;
-  top: 100%;
+  top: 25px;
+  z-index: 20;
+  box-sizing: content-box;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 112px;
+    height: 3px;
+    top: -3px;
+    background-color: @orange;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.js-active {
+    padding: 17px 22px 20px;
+    overflow: visible;
+    opacity: 1;
+  }
 
   a {
     white-space: nowrap;
@@ -174,6 +197,7 @@
     height: 0;
     overflow: hidden;
     transition: @transition;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 
     li {
       padding: 0 15px;
@@ -247,6 +271,11 @@
       height: 14px;
       background-color: rgba(0, 0, 0, .3);
       border-radius: 50%;
+      transition: background @transition;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, .1);
+      }
 
       button {
         width: 10px;
@@ -362,6 +391,15 @@
     width: 25px;
     height: 25px;
     background: url("../images/more-btn-white.png");
+    transition: @transition;
+  }
+
+  &:hover {
+    color: @orange;
+
+    &:after {
+      background: url("../images/more-btn-orange.png");
+    }
   }
 }
 
@@ -444,6 +482,11 @@
   width: 110px;
   height: 26px;
   top: -42px;
+  transition: @transition;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .our-service-slider__next {
@@ -563,10 +606,23 @@
   color: #fff;
   background: rgba(0,0,0,.8);
   transition: @transition;
-  font-size: 14px;
+  font-size: 0.8125rem;
   top: 240px;
-  line-height: normal;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4375rem;
+
+  span {
+    font-weight: 600;
+  }
+
+  ul{
+    list-style: none;
+    margin-bottom: 21px;
+  }
 }
 
 /* - - - - - - - - - - - - - - - - nearest-events - - - - - - - - - - - - - - - - */
@@ -712,6 +768,11 @@
   border-radius: 40px;
   font-weight: bold;
   font-size: 0.875rem;
+  transition: @transition;
+
+  &:hover {
+    background-color: @orange;
+  }
 }
 
 /* - - - - - - - - - - - - - - - - faqs - - - - - - - - - - - - - - - - */
@@ -1202,6 +1263,11 @@
 
 a.breadcrumbs__link {
   position: relative;
+  transition: @transition;
+
+  &:hover {
+    color: rgba(255,255,255,.7);
+  }
 
   &:before {
     position: absolute;
@@ -1412,6 +1478,12 @@ a.breadcrumbs__link {
     position: absolute;
     top: ~"calc(50% - 25px)";
     cursor: pointer;
+    opacity: 0.6;
+    transition: @transition;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .slider-next {
@@ -1991,6 +2063,7 @@ a.breadcrumbs__link {
     color: @orange;
     font-weight: bold;
     padding: 0;
+    cursor: pointer;
   }
 }
 
@@ -2134,14 +2207,23 @@ a.breadcrumbs__link {
 .pagination__prev, .pagination__next {
   width: 41px;
   height: 41px;
+  transition: @transition;
 }
 
 .pagination__prev {
   background: url("../images/pagination-prev.png") center no-repeat;
+
+  &:hover {
+    background-image: url("../images/pagination-prev-hover.png");
+  }
 }
 
 .pagination__next {
   background: url("../images/pagination-next.png") center no-repeat;
+
+  &:hover {
+    background-image: url("../images/pagination-next-hover.svg");
+  }
 }
 
 /* - - - - - - - - - - - - - - - - card - - - - - - - - - - - - - - - - */
@@ -2374,8 +2456,10 @@ a.breadcrumbs__link {
 }
 
 /* - - - - - - - - - - - - - - - - giude - - - - - - - - - - - - - - - - */
-.giude-inner {
+.guide-inner {
   max-width: 776px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #EDEDED;
   margin: 0 auto;
 }
 
@@ -2684,6 +2768,10 @@ a.breadcrumbs__link {
   transition: @transition;
   cursor: pointer;
   opacity: 0;
+
+  &:hover {
+    background-image: url("../images/toUp-hover.png");
+  }
 
   &.show {
     opacity: 1;
